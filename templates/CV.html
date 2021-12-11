@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="static/css/CV.css">
+    <script src="static/js/CV.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="GridContainer">
+        <div id="item1"> Personal Experience </div>
+        <div id="item2">Education Experience</div>
+        <div id="item3">Languages</div>
+
+        <div id="piglet">
+           
+            <form action="" method="post" class="form">
+                <h3> Contact </h3>
+                <label for="Fname"> First name:</label>
+                <input type="text" name="Fname" id="Fname"> <br>
+                <label for="PhoneNumber">Phone Number:</label>
+                <input type="tel" name="PhoneNumber" id="PhoneNumber" required> <br>
+                <label for="request">Your Request:</label><br>
+                <textarea id="request" name="request" cols="50" rows="4">Enter your request here</textarea><br><br>
+                <button onclick="validateInfo()" >submit</button>
+            </form>
+            <img src="pics/piglet.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
