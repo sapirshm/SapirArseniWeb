@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+<body>
+    {% set page_name = 'Catalog Page' %}
+    {% include('menu.html') %}
+
+    <h2 class="{% if color == 'green' %}green{% else %}yellow{% endif %}">Want to find:</h2>
+
+    <form method ="GET" action ="/catalog">
+       Type: <input name ="product_type" type="text">
+        <br>
+        <br>
+        Size: <input name ="size" type="text">
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+    {%  if p_type %}
+          <h2> Product from search</h2>
+
+        Product: {{ p_type }}
+        <br>
+        Size:{{ p_size }}
+     {%  endif %}
+</body>
+</html>

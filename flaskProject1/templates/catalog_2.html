@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Catalog
+{% endblock %}
+
+{% block body %}
+    <!-- {{ super() }} --> <!-- takes all the content from the base.html block body -->
+    {% set page_name = 'Catalog2 Page' %}
+    {% include('menu.html') %}
+    <p> bla bla </p>
+{% endblock %}

@@ -1,0 +1,69 @@
+body{
+    background-color: beige;
+}
+@media only screen and (max-width:700px)
+ {
+     body{
+         background-color:blue;
+     }
+ }
+
+#GridContainer {
+    display: grid;
+    grid-template-areas:
+    'personal personal personal'
+    'education piglet piglet'
+    'langs piglet piglet';
+}
+div{ 
+    border:2px solid black
+    
+}
+#piglet{
+    grid-area: piglet;
+    margin:10px;
+}
+
+#piglet img {
+    width: 30%;
+}
+
+#item1 {
+    grid-area: personal;
+    text-align: center;
+    height: 100px;
+    margin:10px;
+    background-color: white;
+}
+
+#item2 {
+    grid-area: education;
+    height: 200px;
+    margin:10px;
+    background-color: white;
+}
+
+#item3 {
+    grid-area: langs;
+    height: 200px;
+    margin:10px;
+    background-color: white;
+
+}
+@keyframes piglet {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+       transform: rotate(-180deg);
+    }
+    100%{
+       transform: rotate(360deg);
+    }
+   }
+
+   img{
+       animation-name: piglet;
+       animation-duration: 2s;
+       animation-iteration-count: infinite;
+   }
