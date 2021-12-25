@@ -1,4 +1,4 @@
-{% extends 'base.html' %} <!-- uses base.html -->
+{% extends 'base.html' %}
 
 {% block title %}
     Assignment8
@@ -7,13 +7,19 @@
 {% block body %}
     {{ super() }}
     <!--    filter -->
+    {%  if session.username %}
+    <h2>Hello {{ session.username }} </h2>
+    {% else %}
     <h2>Hello {{ name | default('New', true) | upper() }} {{ last_name | default('User', true) | capitalize() }}!</h2>
-<!--    if -->
+    {% endif %}
+
+
     {% if name %}
         <p>How are you?</p>
     {% else %}
         <p>You need to log in!</p>
-    {% endif %}
+
+       {% endif %}
 <!-- loop -->
 <h3>List of hobbies:</h3>
         <ul>
