@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 10</title>
+</head>
+<body>
+  {% include('menu.html') %}
+<h2> Insertion Form </h2>
+<form action="/insert_user" method="POST">
+        Name: <input name="name" type="text">  <br><br>
+        Email: <input name="email" type="email"><br><br>
+        <input type="submit" name ="submit" value ="Insert">
+    </form>
+
+<h2>Update form</h2>
+    <form action="/update_user" method="POST">
+        Name: <input name="name" type="text"> <br><br>
+        New Email: <input name="new_email" type="email"> <br><br>
+        <input type="submit" value="Update">
+    </form>
+        <h2>Delete form</h2>
+        <form action="/delete_user" method="POST">
+            Name: <input name="name" type="text"> <br><br>
+            <input type="submit" value="Delete">
+        </form>
+
+{% if user_list %}
+            <h2>User List:</h2>
+            <ul>
+                {% for user in user_list %}
+                <li>
+                    <b>Name:</b> {{ user.name }}, <b>Email:</b> {{ user.email }}
+                </li>
+                {% endfor %}
+            </ul>
+
+        <p>{{ alert_change }}</p>
+
+        {% endif %}
+</body>
+</html>
