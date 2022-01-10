@@ -1,4 +1,7 @@
+from flask import jsonify
 import mysql.connector
+import json
+
 
 # ------------------------------------------------- #
 # ------------- DATABASE CONNECTION --------------- #
@@ -29,3 +32,18 @@ def interact_db(query, query_type: str):
     connection.close()
     cursor.close()
     return return_value
+
+
+def query_to_json(query):
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         passwd='root',
+                                         database='assignment10db')
+    #  db cursor - this object executes sql queries
+    cursor = connection.cursor(dictionary=True)
+    cursor.execute(query)
+    result = cursor.fetchall()
+
+    connection.close()
+    cursor.close()
+    return result
